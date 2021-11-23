@@ -47,7 +47,7 @@ playerSchema.methods.verifyPassword = async function(password){
 playerSchema.methods.generateToken = function(){
 
     const token = jwt.sign({_id:this.name.toString()},process.env.AUTH_PASSWORD)
-    this.tokens = [...this.tokens,{token}]
+    this.tokens = [{token}]
     this.save()
     return token;
 }

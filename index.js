@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require('cors')
 const app = express()
-const port = 4001
+const port = process.env.PORT || 4001
 const gameRouter = require("./src/game/index")
 const playerRouter = require("./src/player/index")
 const positionRouter = require("./src/positions/index")
